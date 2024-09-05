@@ -51,7 +51,7 @@ function Header() {
                     <p onClick={() => handleScroll('aboutme')}>About me</p>
                     <p onClick={() => handleScroll('projects')}>Projects</p>     
                     <p onClick={() => handleScroll('technologies')}>Technologies</p>
-                    <p onClick={() => handleScroll('reviews')}>Reviews</p>
+                    {/* <p onClick={() => handleScroll('reviews')}>Reviews</p> */}
                     <p onClick={() => handleScroll('contacts')}>Contacts</p>
                 </div>
             }

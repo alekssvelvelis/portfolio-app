@@ -26,7 +26,9 @@ function Contacts() {
 
     const validate = () => {
         const errors = {};
-        if (!formData.name) errors.name = 'Name is required';
+        if (!formData.name){
+            errors.name = 'Name is required';
+        }
         if (!formData.email) {
             errors.email = 'Email is required';
         } else if (!emailRegex.test(formData.email)) {
@@ -50,11 +52,10 @@ function Contacts() {
         
         // Send email using emailjs
         emailjs.sendForm('service_wgelcvo', 'template_4hopte8', e.target, 'xs99INHCskPQFeHqi');
-        console.log(1);
         emailjs.sendForm('service_q0c4ycd', 'template_6khwyz7', e.target, 'xs99INHCskPQFeHqi')
             .then((result) => {
                 console.log(result.text);
-                console.log(2);
+                setFormData({ name: '', email: '', message: '' });
             }, (error) => {
                 console.log(error.text);
             });
