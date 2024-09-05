@@ -4,12 +4,12 @@ import emailjs from 'emailjs-com';
 // Email validation regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Simple sanitization function to remove potentially harmful characters
 const sanitizeInput = (input) => {
-    return input.replace(/<script.*?>.*?<\/script>/gi, '')
-                .replace(/<[^>]*>/g, '')
-                .trim();
+    return input
+        .replace(/<script.*?>.*?<\/script>/gi, '')  // Remove any script tags
+        .replace(/<\/?[^>]+(>|$)/g, '')             // Remove any HTML tags
 };
+
 
 function Contacts() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
