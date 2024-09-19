@@ -7,7 +7,6 @@ const InfoCards = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Check if the top position of the About Me section is within the viewport
             if (
                 infoCardsRef.current &&
                 window.scrollY + window.innerHeight >= infoCardsRef.current.offsetTop
@@ -16,9 +15,7 @@ const InfoCards = () => {
             }
         };
 
-        // Add scroll event listener
         window.addEventListener('scroll', handleScroll);
-        // Cleanup on unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -27,7 +24,7 @@ const InfoCards = () => {
         <>
         <div
             className={`aboutme-container ${isVisible ? 'animate-in-left' : ''}`}
-            ref={infoCardsRef} // Ref to the About Me section
+            ref={infoCardsRef}
         >
             <div>
                 <h1 className='info-card-header'>About me</h1>
@@ -54,7 +51,7 @@ const InfoCards = () => {
                         </div>
                         <h1>Experience</h1>
                     </div>
-                    <p style={{margin: '0', textAlign: 'left'}}>I've been coding since 2021, built a few different projects utilizing a variety of tech both alone and with other people</p>
+                    <p style={{margin: '0', textAlign: 'left'}}>I've been hobby-coding since 2021, built a few different projects using a variety of tech both alone and with other people</p>
                 </div>
                 <div className='info-card yellow'>
                     <div className='info-card-inner'>
