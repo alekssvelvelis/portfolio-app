@@ -26,7 +26,7 @@ function SingleProject({ project, onClose }) {
     observer.current = new IntersectionObserver(handleObserver, {
       root: document.querySelector('.slider'),
       rootMargin: '0px',
-      threshold: 0.5,  // Adjust this value to detect intersection when the image is halfway in view
+      threshold: 0.5,
     });
 
     const images = document.querySelectorAll('.slider img');

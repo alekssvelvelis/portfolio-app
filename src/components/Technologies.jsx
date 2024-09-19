@@ -9,7 +9,6 @@ function Technologies(){
 
     useEffect(() => {
         const handleScroll = () => {
-            // Check if the top position of the About Me section is within the viewport
             if (
                 infoCardsRef.current &&
                 window.scrollY + window.innerHeight >= infoCardsRef.current.offsetTop
@@ -20,7 +19,6 @@ function Technologies(){
 
         // Add scroll event listener
         window.addEventListener('scroll', handleScroll);
-        // Cleanup on unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -29,7 +27,7 @@ function Technologies(){
         <>
         <div
             className={`aboutme-container ${isVisible ? 'animate-in-right' : ''}`}
-            ref={infoCardsRef} // Ref to the About Me section
+            ref={infoCardsRef}
         >
             <div>
                 <h1 className='info-card-header'>Technologies</h1>
